@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_03_02_021228) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "presentations", force: :cascade do |t|
+    t.string "title"
+    t.string "presenter"
+    t.string "theme"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "slides", force: :cascade do |t|
+    t.bigint "presentation_id"
+    t.string "title"
+    t.string "header"
+    t.integer "number"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["presentation_id"], name: "index_slides_on_presentation_id"
+  end
+
 end

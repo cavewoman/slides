@@ -1,0 +1,16 @@
+= simple_form_for(presentation) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title, autofocus: true
+    = f.input :presenter
+    = f.input :theme
+
+  = button_tag type: 'submit', class: 'btn btn-primary' do
+    = text_with_icon "#{btn_action_prefix} Presentation", action_icon_name
+  '
+
+  = link_to text_with_icon('Back', 'chevron-left'), :back, class: 'btn btn-default'
+
+  - if (btn_action_prefix === "Update")
+    = link_to text_with_icon('New Slide', 'plus'), new_slide_path({presentation_id: presentation.id}), class: 'btn btn-primary'

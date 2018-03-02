@@ -1,0 +1,14 @@
+= simple_form_for(slide) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title, autofocus: true
+    = f.input :header
+    = f.input :number
+    = f.input :body
+    = f.hidden_field :presentation_id
+
+  = button_tag type: 'submit', class: 'btn btn-primary' do
+    = text_with_icon "#{btn_action_prefix} Slide", action_icon_name
+  '
+  = link_to text_with_icon('Back', 'chevron-left'), :back, class: 'btn btn-default'

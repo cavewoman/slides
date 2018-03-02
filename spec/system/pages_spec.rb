@@ -9,9 +9,9 @@ describe "Static Pages" do
   end
 
   # Another contrived example, this one relies on the javascript driver.
-  it "/ should include the warm closing text 'Enjoy!'", js: true do
+  it "/ should include the warm closing text 'Listing presentations'", js: true do
     visit root_path
 
-    expect(page).to have_content "Enjoy!"
+    expect(page).to have_content "Listing presentations"
   end
 end
