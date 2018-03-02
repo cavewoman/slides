@@ -1,7 +1,11 @@
 // Navbar
 
-body { padding-top: 70px; }
+body {
+  padding-top: 70px;
+  font-family: "AppleGothic", Helvetica, Arial, sans-serif;
+}
 
-.nav a .glyphicon, form button.btn .glyphicon {
-  padding-right: .2rem;
+.nav a .glyphicon,
+form button.btn .glyphicon {
+  padding-right: 0.2rem;
 }
