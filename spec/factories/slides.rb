@@ -2,7 +2,7 @@
 #
 # Table name: slides
 #
-#  body            :string
+#  body            :text
 #  created_at      :datetime         not null
 #  header          :string
 #  id              :integer          not null, primary key

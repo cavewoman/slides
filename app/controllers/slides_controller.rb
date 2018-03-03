@@ -33,6 +33,10 @@ class SlidesController < ApplicationController
     end
   end
 
+  def slide
+    render json: Slide.find(params["id"])
+  end
+
   def destroy
     @slide.destroy
     redirect_to slides_url, notice: "Slide was successfully destroyed."

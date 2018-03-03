@@ -1,22 +1,2 @@
-.page-header
-  h1 Slide
-
-dl
-  dt Title
-  dd= @slide.title
-  dt Header
-  dd= @slide.header
-  dt Number
-  dd= @slide.number
-  dt Body
-  dd= @slide.body
-
-/- if can?(:edit, @slide)
-= link_to text_with_icon('Edit', 'edit'), edit_slide_path(@slide), class: 'btn btn-default'
-'
-= link_to text_with_icon('Back', 'chevron-left'), :back, class: 'btn btn-default'
-
-/- if can?(:destroy, @slide)
-'
-= link_to text_with_icon('Destroy', 'remove'), slide_path(@slide),
-          method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger'
+.page-header= @slide.header
+.slide-body= @slide.body

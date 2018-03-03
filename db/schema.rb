@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_03_02_021228) do
     t.string "title"
     t.string "header"
     t.integer "number"
-    t.string "body"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["presentation_id"], name: "index_slides_on_presentation_id"
