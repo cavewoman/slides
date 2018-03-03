@@ -1,8 +1,12 @@
 .page-header Presentations
-.presentations-container
-  .presentation-thumbnail.new-presentation-thumbnail
-    .presentation-title= link_to icon('plus'), new_presentation_path
+.thumbnails-container
+  .thumbnail.presentation-thumbnail.new-presentation-thumbnail
+    .add-new-btn= link_to icon('plus'), new_presentation_path
   - @presentations.each do |presentation|
-    .presentation-thumbnail
+    .thumbnail.presentation-thumbnail
+      .action-btns
+        .edit-slide-btn=link_to image_tag("edit-icon.png"), edit_presentation_path(presentation)
+        .delete-slide-btn=link_to image_tag("delete-icon-24x24.png"), presentation_path(presentation),
+                method: :delete, data: { confirm: "Are you sure?" }
       .presentation-title= link_to presentation.title, presentation_path(presentation)
       .presentation-presenter= presentation.presenter

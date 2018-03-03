@@ -1,20 +1,24 @@
 .page-header
-  h1 Presentation
+  h1= @presentation.title
 
-dl
-  dt Title
-  dd= @presentation.title
-  dt Presenter
-  dd= @presentation.presenter
-  dt Theme
-  dd= @presentation.theme
+.thumbnail.thumbnail--presentation
+  .action-btns
+    .edit-slide-btn=link_to image_tag("edit-icon.png"), edit_presentation_path(@presentation)
+    .delete-slide-btn=link_to image_tag("delete-icon-24x24.png"), presentation_path(@presentation),
+            method: :delete, data: { confirm: "Are you sure?" }
+  .presentation-title= @presentation.title
+  .presentation-presenter= @presentation.presenter
 
-/- if can?(:edit, @presentation)
-= link_to text_with_icon('Edit', 'edit'), edit_presentation_path(@presentation), class: 'btn btn-default'
-'
+.thumbnails-container
+  .thumbnail.presentation-thumbnail.new-presentation-thumbnail
+    .add-new-btn= link_to icon('plus'), new_slide_path({presentation_id: @presentation.id})
+  - @slides.each do |slide|
+    .thumbnail.thumbnail--slide
+      .action-btns
+        .edit-slide-btn=link_to image_tag("edit-icon.png"), edit_slide_path(slide)
+        .delete-slide-btn=link_to image_tag("delete-icon-24x24.png"), slide_path(slide),
+                method: :delete, data: { confirm: "Are you sure?" }
+      .slide-number-thumbnail=link_to slide.number, slide_path(slide)
+      .slide-header-thumbnail=link_to slide.header, slide_path(slide)
+
 = link_to text_with_icon('Back', 'chevron-left'), :back, class: 'btn btn-default'
-
-/- if can?(:destroy, @presentation)
-'
-= link_to text_with_icon('Destroy', 'remove'), presentation_path(@presentation),
-          method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger'

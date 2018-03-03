@@ -17,9 +17,9 @@ class SlidesController < ApplicationController
 
   def create
     @slide = Slide.new(slide_params)
-
+    presentation = Presentation.find(@slide.presentation_id)
     if @slide.save
-      redirect_to @slide, notice: "Slide was successfully created."
+      redirect_to presentation, notice: "Slide was successfully created."
     else
       render :new
     end
@@ -38,8 +38,9 @@ class SlidesController < ApplicationController
   end
 
   def destroy
+    presentation = Presentation.find(@slide.presentation_id)
     @slide.destroy
-    redirect_to slides_url, notice: "Slide was successfully destroyed."
+    redirect_to presentation, notice: "Slide was successfully destroyed."
   end
 
   private

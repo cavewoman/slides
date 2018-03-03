@@ -6,6 +6,7 @@ class PresentationsController < ApplicationController
   end
 
   def show
+    @slides = @presentation.slides.sort_by(&:number)
   end
 
   def new
