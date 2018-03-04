@@ -1,2 +1,9 @@
-.page-header= @slide.header
+.slide-header-container
+  .previous-slide-btn
+    a href="#"
+      = image_tag("left-arrow-icon.png")
+  .slide-header= @slide.header
+  .next-slide-btn
+    a href="#"
+      = image_tag("right-arrow-icon.png")
 .slide-body= @slide.body

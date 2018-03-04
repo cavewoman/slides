@@ -1,3 +1,21 @@
+.slide-header-container {
+  display: flex;
+}
+
+.slide-header {
+  flex-grow: 2;
+  font-size: 64px;
+  text-align: center;
+}
+
+.previous-slide-btn {
+  cursor: pointer;
+}
+
+.next-slide-btn {
+  cursor: pointer;
+}
+
 .slide-body {
   font-size: 24px;
 }

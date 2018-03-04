@@ -33,8 +33,9 @@ class SlidesController < ApplicationController
     end
   end
 
-  def slide
-    render json: Slide.find(params["id"])
+  def slide_data
+    slide_data = Slide.slide_data(params["id"])
+    render json: slide_data
   end
 
   def destroy
