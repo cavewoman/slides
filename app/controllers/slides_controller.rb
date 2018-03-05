@@ -16,20 +16,28 @@ class SlidesController < ApplicationController
   end
 
   def create
-    @slide = Slide.new(slide_params)
-    presentation = Presentation.find(@slide.presentation_id)
-    if @slide.save
-      redirect_to presentation, notice: "Slide was successfully created."
+    if admin_signed_in?
+      @slide = Slide.new(slide_params)
+      presentation = Presentation.find(@slide.presentation_id)
+      if @slide.save
+        redirect_to presentation, notice: "Slide was successfully created."
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to "/", notice: "You must be signed in to create a new slide."
     end
   end
 
   def update
-    if @slide.update(slide_params)
-      redirect_to @slide, notice: "Slide was successfully updated."
+    if admin_signed_in?
+      if @slide.update(slide_params)
+        redirect_to @slide, notice: "Slide was successfully updated."
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to @slide, notice: "You must be signed in to updated a slide."
     end
   end
 
@@ -39,9 +47,13 @@ class SlidesController < ApplicationController
   end
 
   def destroy
-    presentation = Presentation.find(@slide.presentation_id)
-    @slide.destroy
-    redirect_to presentation, notice: "Slide was successfully destroyed."
+    if admin_signed_in?
+      presentation = Presentation.find(@slide.presentation_id)
+      @slide.destroy
+      redirect_to presentation, notice: "Slide was successfully destroyed."
+    else
+      redirect_to @slide, notice: "You must be signed in to delete a slide."
+    end
   end
 
   private

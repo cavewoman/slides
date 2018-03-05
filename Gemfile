@@ -13,6 +13,7 @@ gem "rails", "~> 5.2.0.rc1"
 gem "autoprefixer-rails"
 gem "bootstrap-sass"
 gem "coffee-rails"
+gem "devise"
 gem "jquery-rails"
 gem "sass-rails", require: false # Needed for generator (e.g. rail g controller Users)
 gem "sassc-rails"

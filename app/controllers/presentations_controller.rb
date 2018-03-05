@@ -17,26 +17,38 @@ class PresentationsController < ApplicationController
   end
 
   def create
-    @presentation = Presentation.new(presentation_params)
+    if admin_signed_in?
+      @presentation = Presentation.new(presentation_params)
 
-    if @presentation.save
-      redirect_to @presentation, notice: "Presentation was successfully created."
+      if @presentation.save
+        redirect_to @presentation, notice: "Presentation was successfully created."
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to "/", notice: "You must be signed in to create a new presentation."
     end
   end
 
   def update
-    if @presentation.update(presentation_params)
-      redirect_to @presentation, notice: "Presentation was successfully updated."
+    if admin_signed_in?
+      if @presentation.update(presentation_params)
+        redirect_to @presentation, notice: "Presentation was successfully updated."
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to @presentation, notice: "You must be signed in to update a presentation."
     end
   end
 
   def destroy
-    @presentation.destroy
-    redirect_to presentations_url, notice: "Presentation was successfully destroyed."
+    if admin_signed_in?
+      @presentation.destroy
+      redirect_to presentations_url, notice: "Presentation was successfully destroyed."
+    else
+      redirect_to presentations_url, notice: "You must be signed in to remove a presentation."
+    end
   end
 
   private
