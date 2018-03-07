@@ -43,6 +43,15 @@ The easiest way to run the app is using `heroku local`. This starts all the proc
 
 ## Conventions
 
+### Supported Class Names
+`quote-container`
+`large-quote`
+`quote-by`
+`code-section`
+`bash-code`
+`indent--#`
+`notes`
+
 ### Git
 
 * Branch `development` is auto-deployed to acceptance.

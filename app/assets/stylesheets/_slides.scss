@@ -17,28 +17,9 @@
   cursor: pointer;
 }
 
-.slide-body {
-  font-size: 24px;
-  margin-top: 1em;
-
-  li {
-    margin-top: 1em;
-  }
-}
-
-.quote-container {
-  text-align: center;
-}
-
-.code-section {
-  padding: 1em;
-  background-color: lightgray;
-}
-
-.indent {
-  &--1 {
-    margin-left: 1em;
-  }
+.slide-form-text-area {
+  min-height: 300px;
+  width: 100%;
 }
 
 .slide-container {

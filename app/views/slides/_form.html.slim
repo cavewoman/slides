@@ -5,7 +5,7 @@
     = f.input :title, autofocus: true
     = f.input :header
     = f.input :number
-    = f.text_area :body
+    = f.text_area :body, class: "slide-form-text-area"
     = f.hidden_field :presentation_id
 
   = button_tag type: 'submit', class: 'btn btn-primary' do
