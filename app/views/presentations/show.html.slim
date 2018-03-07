@@ -7,7 +7,9 @@
       .edit-slide-btn=link_to image_tag("edit-icon.png"), edit_presentation_path(@presentation)
       .delete-slide-btn=link_to image_tag("delete-icon-24x24.png"), presentation_path(@presentation),
               method: :delete, data: { confirm: "Are you sure?" }
-  .presentation-title=link_to @presentation.title, slide_path(@slides[0])
+    .presentation-title.presentation-title--admin= link_to @presentation.title, intro_slide_path({id: @presentation.id})
+  - else
+    .presentation-title= link_to @presentation.title, intro_slide_path({id: @presentation.id})
   .presentation-presenter= @presentation.presenter
 
 .thumbnails-container
@@ -21,7 +23,9 @@
           .edit-slide-btn=link_to image_tag("edit-icon.png"), edit_slide_path(slide)
           .delete-slide-btn=link_to image_tag("delete-icon-24x24.png"), slide_path(slide),
                   method: :delete, data: { confirm: "Are you sure?" }
-      .slide-number-thumbnail=link_to slide.number, slide_path(slide)
+        .slide-number-thumbnail.slide-number-thumbnail--admin=link_to slide.number, slide_path(slide)
+      - else
+        .slide-number-thumbnail=link_to slide.number, slide_path(slide)
       .slide-header-thumbnail=link_to slide.header, slide_path(slide)
 
 = link_to text_with_icon('Back', 'chevron-left'), :back, class: 'btn btn-default'

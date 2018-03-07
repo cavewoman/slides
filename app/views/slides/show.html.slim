@@ -1,9 +1,13 @@
-.slide-header-container
-  .previous-slide-btn
-    a href="#"
-      = image_tag("left-arrow-icon.png")
-  .slide-header= @slide.header
-  .next-slide-btn
-    a href="#"
-      = image_tag("right-arrow-icon.png")
-.slide-body= @slide.body
+.slide-container
+  - if @previous_slide
+    .previous-slide-btn
+      = link_to image_tag("left-arrow-icon.png"), slide_path(@previous_slide)
+  - else
+    .previous-slide-btn
+      = link_to image_tag("left-arrow-icon.png"), intro_slide_path({id: @presentation.id})
+  .slide-content
+    .slide-header= @slide.header
+    .slide-body= @slide.body
+  - if @next_slide
+    .next-slide-btn
+      = link_to image_tag("right-arrow-icon.png"), slide_path(@next_slide)

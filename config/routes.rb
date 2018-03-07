@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :slides
   resources :presentations
   get "/slide_data/:id", to: "slides#slide_data"
+  get "/presentations/:id/intro_slide", to: "presentations#presentation_intro", as: "intro_slide"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "presentations#index"

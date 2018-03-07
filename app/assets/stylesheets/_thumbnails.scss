@@ -13,9 +13,13 @@
 }
 
 .slide-number-thumbnail {
-  margin-top: 0.5em;
+  margin-top: 1em;
   color: #ffffff;
   font-size: 36px;
+
+  &--admin {
+    margin-top: 0.5em;
+  }
 }
 
 .slide-header-thumbnail {

@@ -1,10 +1,14 @@
 .presentation-title {
-  padding-top: 1.5em;
+  padding-top: 3em;
   font-size: 24px;
   padding-left: 0.5em;
   padding-right: 0.5em;
   a {
     color: #333333;
+  }
+
+  &--admin {
+    padding-top: 1.5em;
   }
 }
 

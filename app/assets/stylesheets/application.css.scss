@@ -5,6 +5,16 @@
 @import "_presentations";
 @import "_slides";
 @import "_thumbnails";
+
+.page-header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.home-icon {
+}
+
 .page-header {
   text-align: center;
   font-size: 64px;
