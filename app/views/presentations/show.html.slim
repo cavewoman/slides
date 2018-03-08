@@ -26,6 +26,6 @@
         .slide-number-thumbnail.slide-number-thumbnail--admin=link_to slide.number, slide_path(slide)
       - else
         .slide-number-thumbnail=link_to slide.number, slide_path(slide)
-      .slide-header-thumbnail=link_to slide.header, slide_path(slide)
+      .slide-header-thumbnail=link_to slide.title, slide_path(slide)
 
 = link_to text_with_icon('Back', 'chevron-left'), :back, class: 'btn btn-default'
