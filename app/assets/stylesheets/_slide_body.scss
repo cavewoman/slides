@@ -50,3 +50,27 @@
     margin-left: 5em;
   }
 }
+
+.image-container {
+  &--center {
+    text-align: center;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}
+
+.image-size {
+  &--full {
+    width: 100%;
+  }
+
+  &--half {
+    width: 50%;
+  }
+}

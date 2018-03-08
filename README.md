@@ -44,13 +44,18 @@ The easiest way to run the app is using `heroku local`. This starts all the proc
 ## Conventions
 
 ### Supported Class Names
-`quote-container`
-`large-quote`
-`quote-by`
-`code-section`
-`bash-code`
-`indent--#`
-`notes`
+* `quote-container`
+* `large-quote`
+* `quote-by`
+* `code-section`
+* `bash-code`
+* `indent--#`
+* `notes`
+* `image-container--center`
+* `image-container--left`
+* `image-container--right`
+* `image-size--full`
+* `image-size--half`
 
 ### Git
 
