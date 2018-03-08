@@ -74,3 +74,17 @@
     width: 50%;
   }
 }
+
+.slide-section-container {
+  &--center {
+    text-align: center;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}

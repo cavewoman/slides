@@ -56,6 +56,9 @@ The easiest way to run the app is using `heroku local`. This starts all the proc
 * `image-container--right`
 * `image-size--full`
 * `image-size--half`
+* `slide-section-container--center`
+* `slide-section-container--left`
+* `slide-section-container--right`
 
 ### Git
 
