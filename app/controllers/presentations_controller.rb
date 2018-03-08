@@ -58,6 +58,12 @@ class PresentationsController < ApplicationController
     render :intro_slide
   end
 
+  def first_presentation_slide
+    presentation = Presentation.find(params[:id])
+    slides = presentation.slides.sort_by(&:number)
+    render json: slides[0]
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

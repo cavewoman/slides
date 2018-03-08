@@ -9,7 +9,7 @@ class SlidesController < ApplicationController
     @presentation = Presentation.find(@slide.presentation_id)
     slides = @presentation.slides.sort_by(&:number)
     slide_index = slides.index(@slide)
-    @previous_slide = slide_index > 0 ? slides[slide_index - 1] : nil
+    @previous_slide = slide_index.positive? ? slides[slide_index - 1] : nil
     @next_slide = slides.length > (slide_index + 1) ? slides[slide_index + 1] : nil
   end
 

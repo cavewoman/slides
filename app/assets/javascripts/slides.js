@@ -24,8 +24,49 @@ $(document).ready(function() {
   }
 });
 
+$(document).keydown(function(e) {
+  if (e.keyCode == 37) {
+    // left
+    const path = window.location.pathname;
+    if (path.match(/\/slides\/\d+/)) {
+      const slideId = path.split("/")[2];
+      getSlideData(slideId, function(response) {
+        if (response.previous_slide) {
+          document.location.href = `/slides/${response.previous_slide.id}`;
+        } else {
+          document.location.href = `/presentations/${
+            response.current_slide.presentation_id
+          }/intro_slide`;
+        }
+      });
+    }
+  } else if (e.keyCode == 39) {
+    // right
+    const path = window.location.pathname;
+    if (path.match(/\/slides\/\d+/)) {
+      const slideId = path.split("/")[2];
+      getSlideData(slideId, function(response) {
+        if (response.next_slide) {
+          document.location.href = `/slides/${response.next_slide.id}`;
+        }
+      });
+    } else if (path.match(/\/presentations\/\d+\/intro_slide/)) {
+      const presentationId = path.split("/")[2];
+      getFirstPresentationSlide(presentationId, function(response) {
+        document.location.href = `/slides/${response.id}`;
+      });
+    }
+  }
+});
+
 function getSlideData(slideId, cb) {
   $.get(`/slide_data/${slideId}`, response => {
+    cb(response);
+  });
+}
+
+function getFirstPresentationSlide(presentationId, cb) {
+  $.get(`/presentations/${presentationId}/first_slide`, response => {
     cb(response);
   });
 }
