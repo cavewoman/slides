@@ -88,3 +88,17 @@
     text-align: right;
   }
 }
+
+.text {
+  &--red {
+    color: red;
+  }
+
+  &--green {
+    color: #27ce27;
+  }
+
+  &--blue {
+    color: blue;
+  }
+}
