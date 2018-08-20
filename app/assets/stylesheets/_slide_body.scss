@@ -9,8 +9,8 @@
 }
 
 .slide-body {
-  font-size: 24px;
-  margin-top: 1em;
+  font-size: 4vh;
+  margin-top: 2vh;
 
   li {
     margin-top: 1em;
@@ -24,6 +24,7 @@
 .code-section {
   padding: 1em;
   background-color: lightgray;
+  overflow-wrap: break-word;
 }
 
 .bash-code {
@@ -37,10 +38,14 @@
   td {
     padding-right: 1em;
   }
+
+  p {
+    overflow-wrap: break-word;
+  }
 }
 
 .notes {
-  font-size: 12px;
+  font-size: 1.5vh;
 }
 
 .indent {

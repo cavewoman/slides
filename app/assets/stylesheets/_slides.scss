@@ -3,18 +3,26 @@
 }
 
 .slide-header {
-  font-size: 64px;
+  font-size: 7vh;
   text-align: center;
 }
 
 .previous-slide-btn {
-  margin-top: 10em;
+  display: flex;
+  width: 15vw;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
 }
 
 .next-slide-btn {
-  margin-top: 10em;
+  display: flex;
+  width: 15vw;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
 }
 
 .slide-form-text-area {
@@ -23,30 +31,31 @@
 }
 
 .slide-container {
-  display: flex;
   width: 100vw;
-  padding-left: 1em;
-  padding-right: 1em;
+  display: flex;
 }
 
 .slide-content {
-  flex: 2;
+  width: 70vw;
   margin-left: 3em;
   margin-right: 3em;
 }
 
 .intro-slide__container {
-  flex: 2;
   text-align: center;
-  padding-top: 10em;
+  width: 70vw;
+  margin-left: 15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .intro-slide__title {
-  font-size: 60px;
+  font-size: 12vh;
 }
 
 .intro-slide__presenter {
-  font-size: 24px;
+  font-size: 3vh;
 }
 
 .sk-circle {
